@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearest Hospitals</title>
+</head>
+<body>
+    <h1>Nearest Hospitals</h1>
+    <form action="/hospitalsNearby" method="post">
+        <label for="address">Enter Address:</label>
+        <input type="text" id="address" name="address">
+        <button type="submit">Find Hospital Nearby</button>
+    <ul>
+        <% if (data){ %>
+        <% data.forEach(hospital => { %>
+            <li>
+                <strong>Name:</strong> <%= hospital.name %><br>
+                <strong>Address:</strong> <%= hospital.vicinity %><br>
+                <strong>Rating:</strong> <%= hospital.rating %>
+            </li>
+        <% }); %>
+    </ul>
+    <% } %>
+    </form>
+</body>
+</html>
